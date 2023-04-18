@@ -1,0 +1,2 @@
+Установил react приложения с помощью npx create-react-app
+
