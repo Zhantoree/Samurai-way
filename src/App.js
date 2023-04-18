@@ -1,9 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+const App = () => {
     return (
-        <div className="App">
+        <div>
+            <Header/>
+            <Tech/>
+        </div>
+    );
+}
+
+const Header = () => {
+    return (
+        <div>
+            <a href="#">Home</a>
+            <a href="#">News</a>
+            <a href="#">Messages</a>
+        </div>
+    );
+}
+
+const Tech = () => {
+    return (
+        <div>
             <ul>
                 <li>css</li>
                 <li>html</li>
