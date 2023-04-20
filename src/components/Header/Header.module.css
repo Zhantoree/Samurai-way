@@ -1,0 +1,42 @@
+.Header {
+    display: flex;
+    justify-content: flex-start;
+}
+
+p {
+    color: var(--component-color);
+    font-size: 36px;
+    font-family: var(--primary-family);
+}
+
+/*Icon*/
+.icon {
+    width: 278px;
+}
+
+.icon span {
+    color: black;
+}
+
+/*Navbar*/
+nav{
+    display: flex;
+    width: 570px;
+    align-items: center;
+    justify-content: space-around;
+}
+img {
+    min-width: 28px;
+    height: 28px;
+
+
+}
+
+.nav_item{
+align-self: center;
+}
+
+/*Search*/
+.search{
+    width: 278px;
+}

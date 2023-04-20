@@ -1,3 +1,20 @@
-ul li {
-  list-style-type: georgian;
+:root {
+  --primary-color: #fff;
+  --background-color: #F1F1F1;
+  --component-color: #EDB11A;
+  --primary-family: Montserrat, sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6,p,header,nav,span {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  max-width: 1170px;
+  margin: auto;
+  background-color: var(--background-color);
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
 }

@@ -1,13 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
-import Header from "./Header";
-import Tech from "./Tech";
+import Sidebar from "./components/Sidebar/Sidebar";
+import Profile from "./components/Content/Profile";
+import Header from "./components/Header/Header";
 
 const App = () => {
     return (
         <div>
             <Header/>
-            <Tech/>
+            <Sidebar/>
+            <Profile/>
         </div>
     );
 }
