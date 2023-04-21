@@ -38,7 +38,10 @@ const Header = () => {
                     </a>
                 </div>
             </nav>
-            <div className={s.search}></div>
+            <div className={s.search}>
+                <input type="text" placeholder={"Search for anything (Jobs)"}/>
+                <img src={require("./assets/seach_icon.png")} alt=""/>
+            </div>
         </div>
     );
 }
