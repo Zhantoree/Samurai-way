@@ -1,8 +1,12 @@
 :root {
   --primary-color: #fff;
   --background-color: #F1F1F1;
+  --grey-color: #E4E4E4;
   --component-color: #EDB11A;
   --primary-family: Montserrat, sans-serif;
+  --brown-text-color: #775C1B;
+  --grey-text-color: #575757;
+
 }
 
 h1,h2,h3,h4,h5,h6,p,header,nav,span {
@@ -11,10 +15,21 @@ h1,h2,h3,h4,h5,h6,p,header,nav,span {
   border: 0;
 }
 
+.Header {
+  margin: 0 auto;
+}
 body {
-  max-width: 1170px;
-  margin: auto;
   background-color: var(--background-color);
+  margin: 0 auto;
+  width: 100vw;
   font-family: Montserrat, sans-serif;
   font-weight: 500;
+}
+
+.content {
+
+  max-width: 1170px;
+
+  display: flex;
+  margin: 38px auto;
 }

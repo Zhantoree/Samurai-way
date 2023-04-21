@@ -6,7 +6,7 @@ const Header = () => {
             <div className={s.icon}>
                 <p>Mercury<span>UM</span></p>
             </div>
-            <nav>
+            <nav className={s.nav}>
                 <div className={s.nav_item}>
                     <a href="#">
                         <img src={require("./assets/home_icon_active.png")} alt=""/>

@@ -1,6 +1,8 @@
 .Header {
     display: flex;
     justify-content: flex-start;
+    background-color: #fff;
+    margin: auto;
 }
 
 p {
@@ -19,7 +21,7 @@ p {
 }
 
 /*Navbar*/
-nav{
+.nav{
     display: flex;
     width: 570px;
     align-items: center;
@@ -48,6 +50,7 @@ input {
     padding: 14px;
     border-radius: 14px 0 0 14px;
     outline: none;
+
 }
 
 
