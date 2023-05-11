@@ -1,6 +1,10 @@
 import s from "./Header.module.css"
+import {NavLink} from "react-router-dom";
+import {useState} from "react";
 
 const Header = () => {
+    let [activePage, setActivePage] = useState('profile')
+
     return (
         <div className={s.Header}>
             <div className={s.icon}>
@@ -8,34 +12,34 @@ const Header = () => {
             </div>
             <nav className={s.nav}>
                 <div className={s.nav_item}>
-                    <a href="#">
-                        <img src={require("./assets/home_icon_active.png")} alt=""/>
-                    </a>
+                    <NavLink to="/" onClick={() =>{if(activePage!=='profile'){setActivePage('profile')}}}>
+                        <img src={activePage ==='profile' ? require("./assets/home_icon_active.png") : require("./assets/home_icon.png")}/>
+                    </NavLink>
                 </div>
                 <div className={s.nav_item}>
-                    <a href="#">
-                        <img src={require("./assets/friends_icon.png")} alt=""/>
-                    </a>
+                    <NavLink to="/dialogs" onClick={() => {if(activePage!=='dialogs'){setActivePage('dialogs')}}}>
+                        <img src={activePage === 'dialogs' ? require("./assets/friends_icon_active.png") : require("./assets/friends_icon.png")}/>
+                    </NavLink>
                 </div>
                 <div className={s.nav_item}>
-                    <a href="#">
-                        <img src={require("./assets/work_icon.png")} alt=""/>
-                    </a>
+                    <NavLink to="/work" onClick={() => {if(activePage!=='work'){setActivePage('work')}}}>
+                        <img src={activePage === 'work' ? require("./assets/work_icon_active.png") : require("./assets/work_icon.png")} alt=""/>
+                    </NavLink>
                 </div>
                 <div className={s.nav_item}>
-                    <a href="#">
-                        <img src={require("./assets/notification_icon.png")} alt=""/>
-                    </a>
+                    <NavLink to="/notification" onClick={() => {if(activePage!=='notification'){setActivePage('notification')}}}>
+                        <img src={activePage === 'notification' ? require("./assets/notification_icon_active.png") : require("./assets/notification_icon.png")} alt=""/>
+                    </NavLink>
                 </div>
                 <div className={s.nav_item}>
-                    <a href="#">
-                        <img src={require("./assets/chat_icon.png")} alt=""/>
-                    </a>
+                    <NavLink to="/chat" onClick={() => {if(activePage!=='chat'){setActivePage('chat')}}}>
+                        <img src={activePage === 'chat' ? require("./assets/chat_icon_active.png") : require("./assets/chat_icon.png")} alt=""/>
+                    </NavLink>
                 </div>
                 <div className={s.nav_item}>
-                    <a href="#">
+                    <NavLink to="#">
                         <img src={require("./assets/profile_icon.png")} alt=""/>
-                    </a>
+                    </NavLink>
                 </div>
             </nav>
             <div className={s.search}>
