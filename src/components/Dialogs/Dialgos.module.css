@@ -1,0 +1,26 @@
+.dialogs {
+    display: flex;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-right: 22px;
+}
+
+.users {
+    width: 50%;
+}
+
+.messages {
+    width: 50%;
+}
+
+.user_item{
+
+}
+
+.message_item{}
+
+a {
+    text-decoration: none;
+    color: var(--grey-text-color)
+}

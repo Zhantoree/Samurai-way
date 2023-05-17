@@ -6,24 +6,22 @@ import Recommend from "./components/Recomend/Recommend";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Dialogs from "./components/Dialogs/Dialogs";
 
-const App = () => {
+const App = (props) => {
     return (
         <BrowserRouter>
-            <div>
-                <div className={s.Header}>
-                    <Header/>
-                </div>
-                <div className={s.content}>
-                    <Sidebar/>
-                    <div className={s.content_wrapper}>
-                        <Routes>
-                            <Route path={'/'} element={<Profile/>}/>
-                            <Route path={'/dialogs'} element={<Dialogs/>}/>
-                        </Routes>
+            <div className={s.Header}>
+                <Header/>
+            </div>
+            <div className={s.content}>
+                <Sidebar/>
+                <div className={s.content_wrapper}>
+                    <Routes>
+                        <Route path={'/*'} element={<Profile Profiles={props.Profiles}/>}/>
+                        <Route path={'/dialogs/*'} element={<Dialogs Dialog={props.Dialog} Message={props.Message} />}/>
+                    </Routes>
 
-                    </div>
-                    <Recommend/>
                 </div>
+                <Recommend/>
             </div>
         </BrowserRouter>
     );

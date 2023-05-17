@@ -1,6 +1,10 @@
 .post {
     font-size: 14px;
-    padding: 15px
+    padding: 15px;
+    background-color: white;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
 }
 
 
@@ -26,6 +30,7 @@
     font-size: inherit;
     color: var(--grey-text-color);
     white-space: pre-wrap;
+
 }
 
 .post_img {
@@ -34,4 +39,14 @@
 
 .user_name{
 
+}
+
+.rating {
+    display: flex;
+}
+
+.rating_inner {
+    padding: 0 10px;
+    color: var(--component-color);
+    font-size: 16px;
 }
