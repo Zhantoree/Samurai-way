@@ -1,7 +1,5 @@
 import s from "./Post.module.css"
 
-
-
 export default function Post(props) {
     return(
         <div className={s.post}>
@@ -22,9 +20,6 @@ export default function Post(props) {
                 </div>
 
             </div>
-            {/*<div className={s.post_img}>*/}
-            {/*    <img src="" alt=""/>*/}
-            {/*</div>*/}
         </div>
     )
 }

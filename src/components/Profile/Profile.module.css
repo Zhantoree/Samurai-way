@@ -1,4 +1,25 @@
 .content {
     width: 570px;
     min-height: 306px;
+    display: inline-table;
+}
+
+.addUser{
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+textarea {
+    border: 3px solid var(--grey-color);
+    border-radius: 7px;
+}
+
+.addUserButton {
+    padding: 10px;
+    border-radius: 10px;
 }
