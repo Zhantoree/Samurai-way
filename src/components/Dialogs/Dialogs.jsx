@@ -7,10 +7,10 @@ export default function Dialogs(props) {
     return (
         <div className={s.dialogs}>
             <div className={s.users}>
-                {props.state.Dialog.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>)}
+                {props.profilePage.Dialog.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>)}
             </div>
             <div className={s.messages}>
-                {props.state.Message.map(message => <MessageItems message_text={message.text}/>)}
+                {props.profilePage.Message.map(message => <MessageItems message_text={message.text}/>)}
             </div>
         </div>
     );
