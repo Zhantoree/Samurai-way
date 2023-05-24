@@ -1,4 +1,5 @@
 import s from './Siderbar.module.css'
+import {NavLink} from "react-router-dom";
 
 const Sidebar = () => {
     return (
@@ -19,14 +20,14 @@ const Sidebar = () => {
                 </div>
             </div>
             <nav>
-                <a href="#" className={s.nav_inner}>
+                <NavLink to="#" className={s.nav_inner}>
                     <img src={require('./assets/Play.png')} alt=""/>
                     <p>Learning</p>
-                </a>
-                <a href="#" className={s.nav_inner}>
+                </NavLink>
+                <NavLink to="#" className={s.nav_inner}>
                     <img src={require('./assets/Chart.png')} alt=""/>
                     <p>Insights</p>
-                </a>
+                </NavLink>
             </nav>
             <div className={s.tags}></div>
         </div>

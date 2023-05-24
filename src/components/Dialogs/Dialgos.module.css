@@ -1,5 +1,5 @@
 .dialogs {
-    display: flex;
+    display: inline-table;
     background-color: white;
     padding: 10px;
     border-radius: 10px;
@@ -7,6 +7,10 @@
 }
 
 .users {
+    display: flex;
+}
+
+.userNames {
     width: 50%;
 }
 
@@ -14,13 +18,28 @@
     width: 50%;
 }
 
-.user_item{
+.user_item {
 
 }
 
-.message_item{}
+.message_item {
+}
 
 a {
     text-decoration: none;
     color: var(--grey-text-color)
+}
+
+.addNewMessage {
+    margin: 10px;
+    display: inline-block;
+}
+
+.addNewMessage textarea {
+    width: 100%;
+}
+
+.addNewMessage button {
+    width: 100%;
+    padding: 5px;
 }

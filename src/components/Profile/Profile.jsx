@@ -1,23 +1,27 @@
 import s from './Profile.module.css'
 import Post from "./Post/Post";
-import React from "react";
+import React, {useState} from "react";
+import {addNewPostActionCreator, updateNewPostActionCreator} from "../../redux/state";
 
 
 
 const Profile = (props) => {
-    let newPost = React.createRef();
+    let [value, setValue] = useState(props.NewPostMessage)
+
     let addPost = () => {
-        props.addPost()
-        props.updateNewPost('')
+        props.dispatch(updateNewPostActionCreator(value))
+        props.dispatch(addNewPostActionCreator())
+        setValue('')
     }
-    let onPostChange = () => {
-        props.updateNewPost(newPost.current.value)
+    let onPostChange = (e) => {
+        setValue(e.target.value)
+
     }
 
     return (
         <div className={s.content}>
             <div className={s.addUser}>
-                <textarea cols="60" rows="5" ref={newPost} value={props.NewPostMessage} onChange={onPostChange}/>
+                <textarea cols="60" rows="5" value={value} onChange={onPostChange}/>
                 <button className={s.addUserButton} onClick={addPost}>Add Post</button>
             </div>
 
