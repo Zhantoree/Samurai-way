@@ -22,7 +22,8 @@ let store = {
                 id: 1, text: "What was the last project?"
             }, {
                 id: 1, text: "Can u borrow me 5$?"
-            },]
+            },],
+            NewMessage: ""
         },
         messagesPage: {
             Posts: [{
@@ -30,7 +31,7 @@ let store = {
             }, {
                 name: "Vladilen Minin", profession: "JS Dev", text: "Hello guys, how are u today?"
             }],
-            NewPostMessage: 'default'
+            NewPostMessage: ''
         }
     },
     getState() {
@@ -56,13 +57,21 @@ let store = {
         } else if (action.type === "UPDATE-NEW-POST") {
             this._state.messagesPage.NewPostMessage = action.newText;
             this.callSubscriber(this._state);
-            console.log(this._state)
+        } else if(action.type === "ADD-NEW-MESSAGE") {
+            let newMessage = { id: 6, text: this._state.profilePage.NewMessage}
+            this._state.profilePage.Message.push(newMessage)
+            this.callSubscriber(this._state);
+        } else if(action.type === "UPDATE-NEW-MESSAGE"){
+            this._state.profilePage.NewMessage = action.newText
+            this.callSubscriber(this._state);
         }
     }
 }
 
 export const addNewPostActionCreator = () => ({type : "ADD-NEW-POST"})
+export const addNewMessageCreator = () => ({type : "ADD-NEW-MESSAGE"})
 export const updateNewPostActionCreator = (text) => ({type : "UPDATE-NEW-POST", newText: text})
+export const updateNewMessageCreator = (text) => ({type : "UPDATE-NEW-MESSAGE", newText: text})
 
 
 export default store;

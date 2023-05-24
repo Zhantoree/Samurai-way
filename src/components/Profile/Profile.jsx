@@ -6,22 +6,20 @@ import {addNewPostActionCreator, updateNewPostActionCreator} from "../../redux/s
 
 
 const Profile = (props) => {
-    let [value, setValue] = useState(props.NewPostMessage)
-
+    let newPost = props.NewPostMessage
     let addPost = () => {
-        props.dispatch(updateNewPostActionCreator(value))
+        props.dispatch(updateNewPostActionCreator(newPost))
         props.dispatch(addNewPostActionCreator())
-        setValue('')
     }
     let onPostChange = (e) => {
-        setValue(e.target.value)
-
+        newPost = e.target.value
+        props.dispatch(updateNewPostActionCreator(newPost))
     }
 
     return (
         <div className={s.content}>
             <div className={s.addUser}>
-                <textarea cols="60" rows="5" value={value} onChange={onPostChange}/>
+                <textarea cols="60" rows="5" value={props.NewPostMessage} onChange={onPostChange}/>
                 <button className={s.addUserButton} onClick={addPost}>Add Post</button>
             </div>
 
