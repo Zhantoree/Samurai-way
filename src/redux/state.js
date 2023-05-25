@@ -1,3 +1,6 @@
+import profileReducer from "./profile-reducer";
+import messageReducer from "./message-reducer";
+
 let store = {
     _state: {
         profilePage: {
@@ -46,32 +49,12 @@ let store = {
     },
 
     dispatch(action) {
-        if (action.type === "ADD-NEW-POST") {
-            let newPost = {
-                name: "John Doe",
-                profession: "Kotlin Dev",
-                text: this._state.messagesPage.NewPostMessage
-            }
-            this._state.messagesPage.Posts.push(newPost)
-            this.callSubscriber(this._state)
-        } else if (action.type === "UPDATE-NEW-POST") {
-            this._state.messagesPage.NewPostMessage = action.newText;
-            this.callSubscriber(this._state);
-        } else if(action.type === "ADD-NEW-MESSAGE") {
-            let newMessage = { id: 6, text: this._state.profilePage.NewMessage}
-            this._state.profilePage.Message.push(newMessage)
-            this.callSubscriber(this._state);
-        } else if(action.type === "UPDATE-NEW-MESSAGE"){
-            this._state.profilePage.NewMessage = action.newText
-            this.callSubscriber(this._state);
-        }
+        this._state.profilePage = profileReducer(this._state.profilePage, action)
+        this._state.messagesPage = messageReducer(this._state.messagesPage, action)
+        this.callSubscriber(this._state);
+
     }
 }
-
-export const addNewPostActionCreator = () => ({type : "ADD-NEW-POST"})
-export const addNewMessageCreator = () => ({type : "ADD-NEW-MESSAGE"})
-export const updateNewPostActionCreator = (text) => ({type : "UPDATE-NEW-POST", newText: text})
-export const updateNewMessageCreator = (text) => ({type : "UPDATE-NEW-MESSAGE", newText: text})
 
 
 export default store;

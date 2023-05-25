@@ -2,7 +2,7 @@ import s from './Dialgos.module.css'
 import {NavLink} from "react-router-dom";
 import DialogItem from "./DialogItems/DialogItems";
 import MessageItems from "./MessageItems/MessageItems";
-import {addNewMessageCreator, updateNewMessageCreator} from "../../redux/state";
+import {addNewMessageCreator, updateNewMessageCreator} from "../../redux/profile-reducer";
 
 export default function Dialogs(props) {
     let newMessage = props.NewMessage
