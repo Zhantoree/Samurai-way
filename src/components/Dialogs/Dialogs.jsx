@@ -8,31 +8,26 @@ export default function Dialogs(props) {
     let newMessage = props.NewMessage
     let onMessageChange = (e) => {
         newMessage = e.target.value
-        props.dispatch(updateNewMessageCreator(newMessage))
+        props.updateNewMessage(newMessage)
     }
     let onAddNewMessage = () => {
-        props.dispatch(updateNewMessageCreator(newMessage))
-        props.dispatch(addNewMessageCreator())
+        props.addNewMessage()
     }
 
     return (
-        <>
-            <div className={s.dialogs}>
-                <div className={s.users}>
-                    <div className={s.userNames}>
-                        {props.profilePage.Dialog.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>)}
-                    </div>
-                    <div className={s.messages}>
-                        {props.profilePage.Message.map(message => <MessageItems message_text={message.text}/>)}
-                    </div>
+        <div className={s.dialogs}>
+            <div className={s.users}>
+                <div className={s.userNames}>
+                    {props.profilePage.Dialog.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>)}
                 </div>
-                <div className={s.addNewMessage}>
-                    <textarea cols="25" rows="3" onChange={onMessageChange}></textarea>
-                    <button onClick={onAddNewMessage}>Add Message</button>
+                <div className={s.messages}>
+                    {props.profilePage.Message.map(message => <MessageItems message_text={message.text}/>)}
                 </div>
             </div>
-
-        </>
-
+            <div className={s.addNewMessage}>
+                <textarea cols="25" rows="3" onChange={onMessageChange}></textarea>
+                <button onClick={onAddNewMessage}>Add Message</button>
+            </div>
+        </div>
     );
 }

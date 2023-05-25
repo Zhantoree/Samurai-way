@@ -12,7 +12,6 @@ const Profile = (props) => {
     let onPostChange = (e) => {
 
         newPost = e.target.value
-        debugger;
         // props.dispatch(updateNewPostActionCreator(newPost))
         props.updateNewPostText(newPost)
     }
