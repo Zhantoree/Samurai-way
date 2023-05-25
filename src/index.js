@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import App from "./App";
-import store from "./redux/state";
+import store from "./redux/redux-store";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -13,9 +13,11 @@ let rerenderEntireTree = (state) => {
     </React.StrictMode>);
 }
 
-rerenderEntireTree(store.getState());
+rerenderEntireTree(store.getState())
 
-store.subscribe(rerenderEntireTree)
+store.subscribe(() => {
+    rerenderEntireTree(store.getState());
+})
 
 
 

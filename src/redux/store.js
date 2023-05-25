@@ -52,9 +52,7 @@ let store = {
         this._state.profilePage = profileReducer(this._state.profilePage, action)
         this._state.messagesPage = messageReducer(this._state.messagesPage, action)
         this.callSubscriber(this._state);
-
     }
 }
-
 
 export default store;
