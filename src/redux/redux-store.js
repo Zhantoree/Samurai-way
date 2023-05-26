@@ -1,4 +1,4 @@
-import {combineReducers, createStore} from "redux";
+import {combineReducers, legacy_createStore} from "redux";
 import profileReducer from "./profile-reducer";
 import messageReducer from "./message-reducer";
 
@@ -7,7 +7,7 @@ let reducers = combineReducers({
     messagesPage: messageReducer
 })
 
-let store = createStore(reducers)
+let store = legacy_createStore(reducers)
 
 
 export default store

@@ -8,3 +8,30 @@ Redux - реализация FLUX архитектуры
 За роутинг в Реакте отвечают компоненты <Route path={''} element={} /> и в качестве ссылки NavLink
 В Route path={'/(dialog)/*'}, * - означает любое перенаправление если адресс начинается с dialog
 Редюсеры(reducers) используются для взаимодействия с определенными частями стейта(redux-store)
+В редаксе есть свои dispatch, getState, subscriber и т.д. Создание стора происходит через createStore(reducers) и пихаем туда
+    редюсеры. Для этого создаем массив редюсеров с помощью combineReducers где ключ:значение это - page:reducer.
+Про контекст api. Мы обертываем компонентой <Provider></Provider> тем компонентам которые хотят доступ к store.
+    После этого с помощью функции connect(mapStateToProps, mapDispatchToProps) создаем контейнерную компоненту и прокидываем в
+    connect две созданные ФУНКЦИИ(mapStateToProps, mapDispatchToProps).
+Deep copy и shallow copy
+    let a = {
+        school: "#5",
+        student: {
+            name: "Vasya"
+        }
+    }
+
+    let b = {...a}
+
+    b.student = {...a.student}
+
+    b.student.name = "ars"
+
+    console.log(a.student.name + " -------- a")
+    console.log(b.student.name + " -------- b")
+
+    Когда мы пишем let b = {...a} - это поверхностная копия, то есть обьекты в b это ссылки на обьекты a
+    А когда b.student = {...a.student} - то мы создаем глубокую копию для обьекта(в данном случае только для student) в b
+
+Мы делаем эти копии для редюсеров когда они не меняют основной стейт а создают новый(копированный) и возвращают его соблюдая
+    иммутабельность.

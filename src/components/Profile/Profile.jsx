@@ -5,14 +5,10 @@ import Post from "./Post/Post";
 const Profile = (props) => {
     let newPost = props.NewPostMessage
     let onAddPost = () => {
-        // props.updateNewPostText(newPost)
-        // props.dispatch(addNewPostActionCreator())
         props.addPost()
     }
     let onPostChange = (e) => {
-
         newPost = e.target.value
-        // props.dispatch(updateNewPostActionCreator(newPost))
         props.updateNewPostText(newPost)
     }
 
@@ -29,5 +25,6 @@ const Profile = (props) => {
         </div>
     );
 }
+
 
 export default Profile;
