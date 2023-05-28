@@ -29,10 +29,10 @@ let initialState = {
 
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
-        case "ADD-NEW-MESSAGE": {
+        case ADD_NEW_MESSAGE: {
             return {...state, Message: [...state.Message, {id: 6, text: state.NewMessage}]}
         }
-        case "UPDATE-NEW-MESSAGE": {
+        case UPDATE_NEW_MESSAGE: {
             return {
                 ...state,
                 NewMessage : action.newText

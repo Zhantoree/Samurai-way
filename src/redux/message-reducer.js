@@ -13,7 +13,7 @@ let initialState =  {
 const messageReducer = (state = initialState, action) => {
     let newState;
     switch (action.type) {
-        case "ADD-NEW-POST":
+        case ADD_NEW_POST:
             let newPost = {
                 name: "John Doe", profession: "Kotlin Dev", text: state.NewPostMessage
             }
@@ -21,7 +21,7 @@ const messageReducer = (state = initialState, action) => {
                 ...state,
                 Posts : [...state.Posts, newPost]
             }
-        case "UPDATE-NEW-POST":
+        case UPDATE_NEW_POST:
             return {
                 ...state,
                 NewPostMessage: action.newText

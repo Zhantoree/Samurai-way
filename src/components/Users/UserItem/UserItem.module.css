@@ -1,0 +1,60 @@
+.content {
+    width: 570px;
+    display: flex;
+    border: 3px solid var(--grey-color);
+    border-radius: 7px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+
+}
+
+.content > *{
+    width: 50%;
+}
+
+
+.userImg {
+    max-width: 20%;
+}
+
+.userImg > *{
+    display: inline-block;
+    width: 100%;
+}
+
+.userImg img{
+    height: 100px;
+    align-content: center;
+    width: 100%;
+    max-width: 100px;
+
+}
+
+.userImg button {
+    border: 3px solid var(--grey-color);
+    width: 100%;
+    max-width: 100px;
+    margin: 2px 2px;
+}
+
+.userData{
+    width: 100%;
+}
+
+.userItem {
+    display: block;
+    width: 50%;
+    color: var(--grey-text-color);
+    font-size: 16px;
+}
+
+.userItem.a {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.userItem.a:first-child{
+    justify-content: space-between;
+}

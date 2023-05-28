@@ -12,7 +12,6 @@ const Profile = (props) => {
         props.updateNewPostText(newPost)
     }
 
-
     return (
         <div className={s.content}>
             <div className={s.addUser}>
